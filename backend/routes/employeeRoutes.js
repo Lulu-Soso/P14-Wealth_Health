@@ -3,9 +3,11 @@ const router = express.Router();
 // import employees from "../data/employees.js";
 // import asyncHandler from "../middleware/asyncHandler.js";
 // import Employee from "../models/employeeModel.js";
-import { getEmployees, getEmployeeById } from "../controllers/employeeController.js";
+import { createEmployee, getEmployees, getEmployeeById } from "../controllers/employeeController.js";
 
-router.route("/").get(getEmployees);
+// router.route("/").post(postEmployee);
+// router.route("/").get(getEmployees);
+router.route("/").post(createEmployee).get(getEmployees);
 router.route("/:id").get(getEmployeeById);
 
 // // router.get("/api/employees", (req, res) => {
